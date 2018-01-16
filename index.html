@@ -2,31 +2,65 @@
 <html>
 <head>
   <title>Виджет для авторизации ВКонтакте</title>
-  <script src="https://vk.com/js/api/openapi.js?151" type="text/javascript"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css" />
+  <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.default.min.css" />
+  <style type="text/css">
+    .app {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .app > div {
+       margin-bottom: 10px;
+    }
+
+    html, body, .app {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="container p-3">
-    <div class="row m-3">
-      <div id="vk_auth" class="mx-auto"></div>
-    </div>
-    <div class="row m-3">
-      <button type="button" class="btn btn-info mx-auto">Поприветствовать</button>
-    </div>
+  <div class="app">
+    <div id="vk_auth"></div>
+    <button type="button" id="greetButton">Поприветствовать</button>
   </div>
+  
+  <!-- Kendo UI -->
 
-  <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+  <script src="http://kendo.cdn.telerik.com/2017.3.1026/js/jquery.min.js"></script>
+  <script>
+    if (typeof jQuery == "undefined") {
+      // fallback to local jQuery
+      document.write(decodeURIComponent('%3Cscript src="/path/to/local/jquery.min.js" %3E%3C/script%3E'));
+    }
+  </script>
 
-  <script 
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-    crossorigin="anonymous"></script>
+  <script src="http://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+  <script>
+    if (typeof kendo == "undefined") {
+      // checking for loaded CSS files is cumbersome,
+      // that's why we assume that if the scripts have failed, so have the stylesheets
+
+      // fallback to local Kendo UI stylesheets
+      document.write(decodeURIComponent('%3Clink rel="stylesheet" href="/path/to/local/kendo.common.min.css" %3C/%3E'));
+      document.write(decodeURIComponent('%3Clink rel="stylesheet" href="/path/to/local/kendo.default.min.css" %3C/%3E'));
+
+      // fallback to local Kendo UI scripts
+      document.write(decodeURIComponent('%3Cscript src="/path/to/local/kendo.all.min.js" %3E%3C/script%3E'));
+      // also add kendo.aspnetmvc.min.js or kendo.timezones.min.js, if needed
+    }
+  </script>
+
+  <!-- VK -->
+
+  <script src="https://vk.com/js/api/openapi.js?151" type="text/javascript"></script>
 
   <script type="text/javascript">
-    // тут использовать ID вашего приложения
     VK.init({
       apiId: 6334072
     });
@@ -36,8 +70,12 @@
     VK.Widgets.Auth('vk_auth', {});
   </script>
 
+  <!-- App -->
+
   <script type="text/javascript">
-    // TODO:
+    $("#greetButton").kendoButton({
+      enable: true
+    });
   </script>
 </body>
 </html>
