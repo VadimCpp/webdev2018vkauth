@@ -3,9 +3,27 @@
 <head>
   <title>Виджет для авторизации ВКонтакте</title>
   <script src="https://vk.com/js/api/openapi.js?151" type="text/javascript"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 </head>
 <body>
-  <div id="vk_auth"></div>
+  <div class="container p-3">
+    <div class="row m-3">
+      <div id="vk_auth" class="mx-auto"></div>
+    </div>
+    <div class="row m-3">
+      <button type="button" class="btn btn-info mx-auto">Поприветствовать</button>
+    </div>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <script 
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     // тут использовать ID вашего приложения
@@ -13,8 +31,13 @@
       apiId: 6334072
     });
   </script>
+
   <script type="text/javascript">
     VK.Widgets.Auth('vk_auth', {});
+  </script>
+
+  <script type="text/javascript">
+    // TODO:
   </script>
 </body>
 </html>
