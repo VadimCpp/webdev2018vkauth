@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Виджет для авторизации ВКонтакте</title>
+  <script src="https://vk.com/js/api/openapi.js?151" type="text/javascript"></script>
+</head>
+<body>
+  <div id="vk_auth"></div>
+
+  <script type="text/javascript">
+    // тут использовать ID вашего приложения
+    VK.init({
+      apiId: 6334072
+    });
+  </script>
+  <script type="text/javascript">
+    VK.Widgets.Auth('vk_auth', {});
+  </script>
+</body>
+</html>
