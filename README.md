@@ -16,6 +16,9 @@
 
 ## Technology Stack
 
+* html
+* css
+* js
 * jQuery
 * Kendo UI
 * npm
