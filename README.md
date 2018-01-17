@@ -1,9 +1,6 @@
 # webdev2018vkauth
 
-> Виджет для авторизации ВКонтакте
-
-Blogger post:
-(TODO)
+> Пост на Blogger: [Виджет для авторизации ВКонтакте](https://webdev2018.blogspot.ru/2018/01/vk-auth-widget.html)
 
 
 ## Getting Started
