@@ -73,8 +73,36 @@
   <!-- App -->
 
   <script type="text/javascript">
+    function greetUser(first_name, last_name) {
+      alert('Привет, ' + first_name + ' ' + last_name + '!');
+    }
+
+    function getUserInfo(user_id) {
+      VK.Api.call('users.get', {user_ids: user_id}, function(r) {
+        if(r.response) {
+          greetUser(r.response[0].first_name, r.response[0].last_name);
+        }
+      });
+    }
+
     $("#greetButton").kendoButton({
-      enable: true
+      enable: true,
+      click: function(e) {
+        VK.Auth.getLoginStatus(function (data) {
+          console.log(data);
+
+          if (data.status == 'unknown') {
+            alert('Неа! Пользователь не авторизован ВКонтакте.');
+          } else if (data.status == 'connected') {
+            
+            getUserInfo(data.session.mid);
+
+          } else {
+            console.warn('not implemented');
+          }
+
+        });
+      }
     });
   </script>
 </body>
