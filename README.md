@@ -26,6 +26,6 @@
 
 ## Дополнительно ##
 
-Виджет для авторизации ВКонтакте?
+Виджет для авторизации ВКонтакте:
 
-https://webdev2018.blogspot.ru/2018/01/vk-auth-widget.html
+http://webdev2018.blogspot.ru/2018/01/vk-auth-widget.html
