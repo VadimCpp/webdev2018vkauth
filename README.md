@@ -1,7 +1,5 @@
 # webdev2018vkauth
 
-> Пост на Blogger: [Виджет для авторизации ВКонтакте](https://webdev2018.blogspot.ru/2018/01/vk-auth-widget.html)
-
 
 ## Getting Started
 
@@ -25,3 +23,9 @@
 * yarn
 * git
 * VK Open API
+
+## Дополнительно ##
+
+Виджет для авторизации ВКонтакте?
+
+https://webdev2018.blogspot.ru/2018/01/vk-auth-widget.html
