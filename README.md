@@ -1,5 +1,6 @@
 # webdev2018vkauth
 
+Данный проект закрыт
 
 ## Getting Started
 
